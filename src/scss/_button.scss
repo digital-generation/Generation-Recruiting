@@ -17,7 +17,7 @@
   transition: background-color 0.15s;
 
   &:hover{
-    background-color:#F0F5FA;
+    background-color:$button-rollover;
   }
 
 
@@ -36,13 +36,13 @@
 
   //Gradient Button
   &--gradient{
-    background-image: linear-gradient(to left, #03dc41, #2896fc);
+    background-image: linear-gradient(to left, $gradient-button-start, $gradient-button-end);
     transition: background-image 0.15s;
     color:white;
     border:0;
 
     &:hover{
-      background-image: linear-gradient(to left, #02C53A, #2487E3);
+      background-image: linear-gradient(to left, $gradient-button-start-roll, $gradient-button-end-roll);
     }
 
   }

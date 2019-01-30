@@ -16,26 +16,30 @@ $yellow : #FAD000;
 $tab-link-text : #A8B5C0;
 $tab-link-text-active : #303135;
 
+//Default Button Colors
 $button-border : #b8c6d5;
+$button-rollover : #F0F5FA;
 
+//Gradient Button Colors
+$gradient-button-start : #03dc41;
+$gradient-button-end : #2896fc;
+$gradient-button-start-roll : #02C53A;
+$gradient-button-end-roll : #2487E3;
+
+//Dasboard UI Colors
 $steps-connector-line-color:#d2dce4;
-
 $progress-bar-color : #00c96f;
 $progress-bar-track-color : #edf3f7;
 
 
 //Spacing
+$sidebar-padding : 2.5rem;
+$dashboard-padding : 2.5rem;
+$modal-padding : 2.5rem;
+
 $step-indent : 4rem;
 $step-padding : 1.5rem;
 $step-bottom-margin : 3rem;
 
 $step-left-border-width : 18px;
-
-
-$sidebar-padding : 2.5rem;
-$dashboard-padding : 2.5rem;
-$modal-padding : 2.5rem;
-
-
-//Visual Stuff
 $step-border-radius : 10px;
