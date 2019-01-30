@@ -114,6 +114,13 @@
     }
   }
 
+  &--interview-active{
+    &:before{
+      background-image: url('../images/track/interview-active-step.svg');
+
+    }
+  }
+
   //Completed step
   &--completed{
     background-color:transparent;
