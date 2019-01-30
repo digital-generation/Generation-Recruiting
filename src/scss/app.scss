@@ -1,0 +1,35 @@
+
+@import 'normalize'; //Optional, you may not need
+
+//Global Stuff
+@import 'vars';
+@import 'text';
+@import 'button';
+
+//Signup & Login Screens
+@import 'modal';
+@import 'form';
+
+//Dashboard Pages
+@import 'header';
+@import 'dashboard';
+@import 'steps';
+
+
+
+//This controls the root text size, which determins the size of 1rem everywhere else
+html{
+  font-size: 80%;
+
+    @media (min-width:$medium) {
+      font-size: 85%;
+    }
+
+    @media (min-width:$large) {
+      font-size: 100%;
+    }
+}
+
+body{
+  background-color:$body-background;
+}

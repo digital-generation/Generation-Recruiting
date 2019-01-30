@@ -1,0 +1,197 @@
+//<main> element that contatins the steps etc
+.dashboard{
+
+  width:100%;
+  background-color:$steps-background;
+  padding:$dashboard-padding/2;
+  @media (min-width:$medium) {
+    padding:$dashboard-padding;
+  }
+  box-sizing: border-box;
+
+  background-image: linear-gradient(to top, rgba(58, 77, 107, 0), rgba(52, 86, 138, 0.07));
+  background-size: 100% 5rem;
+  background-repeat: no-repeat;
+
+  @media (min-width:$large) {
+    width: 70%;
+  }
+
+  //"Hello" salutations
+  &__greeting{
+    display:block;
+    @include azo();
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  //Program name
+  &__title{
+    color:$blue;
+    font-size: 1.5rem;
+    @include azo();
+    margin:0;
+    margin-bottom: 1.5rem;
+    line-height: normal;
+    text-transform: none;
+  }
+}
+
+//Small heading for each group of steps, ie "Let's get started"
+.steps-section-heading{
+  margin-bottom: 1.5rem;
+  background-color:$steps-background;
+  position: relative;
+  z-index: 2;
+
+  a{
+    text-decoration: underline;
+  }
+
+  &__text{
+    margin-bottom: 0.5rem !important;
+    margin-top: 0.5rem !important;
+    display: inline-block;
+    margin-right: 1.5rem !important;
+  }
+
+  &__note{
+    display: inline-block;
+  }
+}
+
+//Wrapper for the step tiles, provides no style, just acts as a canvas for the lines added by js
+.steps-container{
+  position: relative;
+
+}
+
+//Line segment, which gets added and manipulated with js
+.steps-track{
+  width:3px;
+  position:absolute;
+  z-index: 1;
+  background-color: $steps-connector-line-color;
+  left:calc(1.5rem - 1.5px);
+  top:0;
+}
+
+//Container for the two columns of the dashboard
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  margin:0 auto;
+  padding-bottom:8rem;
+
+  @media (min-width:$large) {
+    padding-bottom: 0;
+  }
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+//"You're In" message at the end of the steps
+.steps__completed-msg{
+  @include azo();
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  padding:0.5rem 0;
+  color:#00bf36;
+  background-color:#F7FAFD;
+  position: relative;
+  z-index: 2;
+}
+
+//Dashboard sidebar column
+.sidebar{
+  width:100%;
+  box-sizing: border-box;
+  padding:$sidebar-padding/2;
+  @media (min-width:$medium) {
+    padding:$sidebar-padding;
+  }
+  background-color: white;
+
+
+  @media (min-width:$large) {
+    width:30%;
+  }
+
+  background-image: linear-gradient(to top, rgba(58, 77, 107, 0), rgba(52, 86, 138, 0.07));
+  background-size: 100% 5rem;
+  background-repeat: no-repeat;
+
+  //Horizontal rule used in the sidebar
+  &__rule{
+    height: 1px;
+    background-color: #edf3f7;
+    border:0;
+    margin:2rem -#{$sidebar-padding/2};
+    @media (min-width:$medium){
+      margin:2rem -#{$sidebar-padding};
+    }
+
+  }
+
+  //Sponsor image in sidebar
+  &__sponsor{
+    display:block;
+    margin-bottom: 1.5rem;
+  }
+}
+
+//Container for the progress box
+.progress{
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 10;
+  padding:$sidebar-padding/2 $sidebar-padding;
+  width:100%;
+  left:0;
+  bottom:0;
+  background-color:white;
+  border-top:1px solid $button-border;
+
+
+  @media (min-width:$large) {
+    position: static;
+    padding: 0;
+    background-color: transparent;
+    border-top:0;
+  }
+
+  //Hide progress <hr> for mobile
+  .sidebar__rule{
+    display:none;
+    @media (min-width:$large) {
+      display:block;
+    }
+  }
+
+  //Numeric progress %
+  &__number{
+    display: block;
+    text-align: right;
+  }
+
+}
+
+//Actual progress bar element
+.progress-bar{
+  background-color: $progress-bar-track-color;
+  height: 8px;
+  border-radius: 5px;
+  margin-bottom: 1em;
+
+  &__fill{
+    height: 8px;
+    border-radius: 5px;
+    background-color: $progress-bar-color;
+  }
+}

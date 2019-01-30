@@ -1,0 +1,48 @@
+.header{
+
+  padding:1rem $dashboard-padding/2;
+  @media (min-width:$medium) {
+    padding:1.5rem $dashboard-padding;
+  }
+  background-color: white;
+
+  text-align: right;
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  //Generation Logo
+  &__logo{
+    vertical-align: middle;
+    float:left;
+    max-height: 3rem;
+  }
+
+  //Welcome back greeting
+  &__greeting{
+    display: none;
+    @media (min-width:$medium-large) {
+      display:inline;
+    }
+  }
+
+  //Signout link
+  &__action{
+
+
+  }
+
+  //Help Button
+  &__help{
+    margin-right:0;
+  }
+
+  //Margins for header elements
+  &__greeting, &__action, &__help{
+    margin-left: 1.5rem;
+  }
+
+}

@@ -1,0 +1,59 @@
+@mixin azo() {
+  font-family: azo-sans-web, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+}
+
+@mixin text-normalize(){
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+//These are some basic global text styles. Can potentially namespace them if there are conflicts
+body{
+   color: $body;
+   font-family: 'Roboto', sans-serif;
+}
+
+a{
+  color:$blue;
+}
+
+p, ol{
+  @include text-normalize();
+  font-size: 1.0625rem; //17px at 100%
+  line-height: 1.76;
+  margin:2rem 0;
+  //margin-bottom: 3rem;
+  //margin-top:0;
+}
+
+ol{
+  padding-left:1.5rem;
+}
+
+.mini-caps-heading{
+  @include text-normalize();
+  @include azo();
+  text-transform: uppercase;
+  font-size:0.9375rem; //15px at 100%
+  margin:0;
+  margin-bottom: 1.5rem;
+  line-height: normal;
+
+}
+
+h1{
+  @include azo();
+  text-transform: uppercase;
+}
+
+h3{
+  @include text-normalize();
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+}

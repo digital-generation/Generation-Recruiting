@@ -1,0 +1,153 @@
+@mixin shadow(){
+  box-shadow: 0 18px 30px 0 rgba(34,46,79,0.16);
+}
+
+.step{
+  position: relative;
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  align-items: flex-start;
+
+  padding:$step-padding;
+  margin-left:$step-indent + 0.5rem;
+  margin-bottom: $step-bottom-margin;
+
+  border-radius: $step-border-radius;
+  background-color: white;
+  
+
+  *{
+    margin-bottom: 0;
+    margin-top:0;
+  }
+
+  a{
+    text-decoration: underline;
+  }
+
+
+  &:before{
+    content:'';
+    background-image: url('../images/track/step.svg');
+
+    width:2rem;
+
+    height:3rem;
+    position: absolute;
+    left:-$step-indent;
+    top:50%;
+    transform: translateY(-1.5rem);
+
+    background-color:$steps-background;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 2rem 2rem;
+
+    box-sizing:border-box;
+    z-index: 2;
+  }
+
+  &__text-container{
+    flex:0 1 auto;
+    padding-right:1.25rem;
+
+  }
+
+  &__heading{
+    @include azo();
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.3px;
+    display: inline-block;
+    margin-right: 0.75rem;
+    margin-bottom: 0.25rem;
+
+  }
+
+  &__button{
+
+    margin:0;
+    margin-left: auto;
+    flex:0 1 auto;
+
+    //align-self: flex-end;
+  }
+
+  p{
+    font-size: 1rem;
+  }
+
+  &--active{
+    @include shadow();
+
+    &:before{
+      background-image: url('../images/track/blue-current-step.svg');
+    }
+
+    .step__heading{
+      //width:60%;
+      //float:left;
+    }
+
+    .step__note{
+      //clear:left;
+    }
+  }
+
+  &--disabled{
+    color:#A6AFBD;
+  }
+
+  &--completed{
+    background-color:transparent;
+    h3{
+      color:$green;
+    }
+
+    &:before{
+      background-image: url('../images/track/finished-step.svg');
+
+    }
+  }
+
+  &--phone-active{
+    //background-color:transparent;
+    //box-shadow: 0 18px 30px 0 rgba(34,46,79,0.16);
+    //border-left:18px solid #FAD000;
+    h3,p{
+      //color:#a6afbd;
+    }
+
+    &:before{
+      background-image: url('../images/track/phone-active.svg');
+      left: -$step-indent;
+    }
+
+  }
+
+  &--afterward{
+    //background-color:transparent;
+    @include shadow();
+    border-left:$step-left-border-width solid $yellow;
+    h3,p{
+      //color:#a6afbd;
+    }
+
+    &:before{
+      background-image: url('../images/track/phone-after.svg');
+      left: calc(-#{$step-indent} - #{$step-left-border-width});
+    }
+
+  }
+
+  &--interview{
+    &:before{
+      background-image: url('../images/track/interview-unfilled-step.svg');
+
+    }
+  }
+}
