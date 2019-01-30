@@ -1,9 +1,6 @@
 $( document ).ready(function() {
     var $container = $('.steps-container');
     var startPos = 0;
-
-    //$container.append('<div class="steps-track" style=" "></div>');
-
     var index = 0;
 
     var $steps = $container.find('.step');
