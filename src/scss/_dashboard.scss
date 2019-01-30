@@ -1,21 +1,44 @@
+//Container for the two columns of the dashboard
+.container{
+  display: flex;
+  flex-wrap: wrap;
+
+  margin:0 auto;
+  padding-bottom:8rem;
+  @media (min-width:$large) {
+    padding-bottom: 0;
+  }
+
+  //clearfix
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
 //<main> element that contatins the steps etc
 .dashboard{
 
   width:100%;
+  box-sizing: border-box;
+  @media (min-width:$large) {
+    width: 70%;
+  }
+
+
   background-color:$steps-background;
   padding:$dashboard-padding/2;
   @media (min-width:$medium) {
     padding:$dashboard-padding;
   }
-  box-sizing: border-box;
+
 
   background-image: linear-gradient(to top, rgba(58, 77, 107, 0), rgba(52, 86, 138, 0.07));
   background-size: 100% 5rem;
   background-repeat: no-repeat;
 
-  @media (min-width:$large) {
-    width: 70%;
-  }
+
 
   //"Hello" salutations
   &__greeting{
@@ -40,10 +63,11 @@
 
 //Small heading for each group of steps, ie "Let's get started"
 .steps-section-heading{
-  margin-bottom: 1.5rem;
-  background-color:$steps-background;
   position: relative;
   z-index: 2;
+
+  margin-bottom: 1.5rem;
+  background-color:$steps-background;
 
   a{
     text-decoration: underline;
@@ -69,60 +93,48 @@
 
 //Line segment, which gets added and manipulated with js
 .steps-track{
-  width:3px;
   position:absolute;
   z-index: 1;
-  background-color: $steps-connector-line-color;
   left:calc(1.5rem - 1.5px);
   top:0;
-}
 
-//Container for the two columns of the dashboard
-.container{
-  display: flex;
-  flex-wrap: wrap;
-  margin:0 auto;
-  padding-bottom:8rem;
+  width:3px;
 
-  @media (min-width:$large) {
-    padding-bottom: 0;
-  }
-
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+  background-color: $steps-connector-line-color;
 }
 
 
 //"You're In" message at the end of the steps
 .steps__completed-msg{
+  position: relative;
+  z-index: 2;
+
+  padding:0.5rem 0;
+
   @include azo();
   text-transform: uppercase;
   font-size: 1.5rem;
-  padding:0.5rem 0;
+
   color:#00bf36;
   background-color:#F7FAFD;
-  position: relative;
-  z-index: 2;
+
 }
 
 //Dashboard sidebar column
 .sidebar{
   width:100%;
+  @media (min-width:$large) {
+    width:30%;
+  }
   box-sizing: border-box;
+
+
   padding:$sidebar-padding/2;
   @media (min-width:$medium) {
     padding:$sidebar-padding;
   }
+
   background-color: white;
-
-
-  @media (min-width:$large) {
-    width:30%;
-  }
-
   background-image: linear-gradient(to top, rgba(58, 77, 107, 0), rgba(52, 86, 138, 0.07));
   background-size: 100% 5rem;
   background-repeat: no-repeat;
@@ -148,13 +160,15 @@
 
 //Container for the progress box
 .progress{
-  box-sizing: border-box;
   position: fixed;
   z-index: 10;
-  padding:$sidebar-padding/2 $sidebar-padding;
-  width:100%;
   left:0;
   bottom:0;
+  width:100%;
+
+  box-sizing: border-box;
+  padding:$sidebar-padding/2 $sidebar-padding;
+
   background-color:white;
   border-top:1px solid $button-border;
 
@@ -162,6 +176,7 @@
   @media (min-width:$large) {
     position: static;
     padding: 0;
+
     background-color: transparent;
     border-top:0;
   }
@@ -184,10 +199,13 @@
 
 //Actual progress bar element
 .progress-bar{
-  background-color: $progress-bar-track-color;
   height: 8px;
-  border-radius: 5px;
+
   margin-bottom: 1em;
+
+  background-color: $progress-bar-track-color;
+  border-radius: 5px;
+
 
   &__fill{
     height: 8px;

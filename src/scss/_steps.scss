@@ -2,6 +2,7 @@
   box-shadow: 0 18px 30px 0 rgba(34,46,79,0.16);
 }
 
+//Styling for all step tile types
 .step{
   position: relative;
   display: flex;
@@ -26,26 +27,27 @@
     text-decoration: underline;
   }
 
-
+  //Add the little step graphic on the left
   &:before{
-    content:'';
-    background-image: url('../images/track/step.svg');
-
-    width:2rem;
-
-    height:3rem;
     position: absolute;
+    z-index: 2;
     left:-$step-indent;
     top:50%;
     transform: translateY(-1.5rem);
 
+    width:2rem;
+    height:3rem;
+
+    content:'';
+
+    background-image: url('../images/track/step.svg');
     background-color:$steps-background;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 2rem 2rem;
 
     box-sizing:border-box;
-    z-index: 2;
+
   }
 
   &__text-container{
@@ -56,23 +58,23 @@
 
   &__heading{
     @include azo();
-    font-size: 1.25rem;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: 0.3px;
-    display: inline-block;
+    @include text-normalize();
+
     margin-right: 0.75rem;
     margin-bottom: 0.25rem;
+
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+    display: inline-block;
 
   }
 
   &__button{
+    flex:0 1 auto;
 
     margin:0;
     margin-left: auto;
-    flex:0 1 auto;
 
   }
 
@@ -80,26 +82,39 @@
     font-size: 1rem;
   }
 
+  //Active step
   &--active{
     @include shadow();
 
     &:before{
       background-image: url('../images/track/blue-current-step.svg');
     }
-
-    .step__heading{
-
-    }
-
-    .step__note{
-
-    }
   }
 
+  //Adds the active phone icon to an active step
+  &--phone-active{
+
+    &:before{
+      background-image: url('../images/track/phone-active.svg');
+      left: -$step-indent;
+    }
+
+  }
+
+  //Greyed out step
   &--disabled{
     color:#A6AFBD;
   }
 
+  //Adds person icon to a greyed out step
+  &--interview{
+    &:before{
+      background-image: url('../images/track/interview-unfilled-step.svg');
+
+    }
+  }
+
+  //Completed step
   &--completed{
     background-color:transparent;
     h3{
@@ -112,15 +127,7 @@
     }
   }
 
-  &--phone-active{
-
-    &:before{
-      background-image: url('../images/track/phone-active.svg');
-      left: -$step-indent;
-    }
-
-  }
-
+  //Step that is completed but providing additional info
   &--afterward{
     @include shadow();
     border-left:$step-left-border-width solid $yellow;
@@ -132,10 +139,5 @@
 
   }
 
-  &--interview{
-    &:before{
-      background-image: url('../images/track/interview-unfilled-step.svg');
 
-    }
-  }
 }
