@@ -15,7 +15,7 @@
 
   border-radius: $step-border-radius;
   background-color: white;
-  
+
 
   *{
     margin-bottom: 0;
@@ -74,7 +74,6 @@
     margin-left: auto;
     flex:0 1 auto;
 
-    //align-self: flex-end;
   }
 
   p{
@@ -89,12 +88,11 @@
     }
 
     .step__heading{
-      //width:60%;
-      //float:left;
+
     }
 
     .step__note{
-      //clear:left;
+
     }
   }
 
@@ -115,12 +113,6 @@
   }
 
   &--phone-active{
-    //background-color:transparent;
-    //box-shadow: 0 18px 30px 0 rgba(34,46,79,0.16);
-    //border-left:18px solid #FAD000;
-    h3,p{
-      //color:#a6afbd;
-    }
 
     &:before{
       background-image: url('../images/track/phone-active.svg');
@@ -130,12 +122,8 @@
   }
 
   &--afterward{
-    //background-color:transparent;
     @include shadow();
     border-left:$step-left-border-width solid $yellow;
-    h3,p{
-      //color:#a6afbd;
-    }
 
     &:before{
       background-image: url('../images/track/phone-after.svg');

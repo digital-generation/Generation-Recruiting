@@ -18,15 +18,10 @@ body.align-modal{
   background-color: white;
   box-shadow: 0 6px 40px 0 rgba(0,0,0,0.10);
 
+
   //Layout two halves of the signup/login screen
   >div{
     box-sizing: border-box;
-
-    /*width:100%;
-    @media (min-width:$large) {
-      width:50%;
-    }*/
-
 
     padding:$modal-padding;
 
