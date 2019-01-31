@@ -636,6 +636,13 @@
 		"oAP": "/build/parts/login-form.html",
 		"oF": 0
 		},
+	"/src/parts/signup-form-validation.kit": {
+		"cB": 0,
+		"ft": 2048,
+		"oA": 1,
+		"oAP": "/build/parts/signup-form-validation.html",
+		"oF": 0
+		},
 	"/src/parts/signup-form.kit": {
 		"cB": 0,
 		"ft": 2048,
@@ -778,6 +785,13 @@
 		"ft": 2048,
 		"oA": 0,
 		"oAP": "/build/signup-branded.html",
+		"oF": 0
+		},
+	"/src/signup-validation.kit": {
+		"cB": 0,
+		"ft": 2048,
+		"oA": 0,
+		"oAP": "/build/signup-validation.html",
 		"oF": 0
 		},
 	"/src/signup.kit": {

@@ -40,3 +40,15 @@ form{
     padding-left:0.75rem;
   }
 }
+
+.field-error{
+  border:1px solid $error-color !important;
+}
+
+.field-warning{
+  border:1px solid $warning-color !important;
+}
+
+.field-valid{
+  border:1px solid $valid-color !important;
+}
