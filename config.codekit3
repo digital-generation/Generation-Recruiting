@@ -335,7 +335,7 @@
 		},
 	"/src/images/track/phone-active.png": {
 		"ft": 32768,
-		"iS": 865,
+		"iS": 1327,
 		"oA": 0,
 		"oAP": "/build/images/track/phone-active.png",
 		"oF": 0,
@@ -356,7 +356,7 @@
 		},
 	"/src/images/track/phone-active@2x.png": {
 		"ft": 32768,
-		"iS": 1778,
+		"iS": 2762,
 		"oA": 0,
 		"oAP": "/build/images/track/phone-active@2x.png",
 		"oF": 0,
